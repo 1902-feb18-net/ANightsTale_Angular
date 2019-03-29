@@ -1,0 +1,32 @@
+<p>
+  character works!
+</p>
+
+<div>
+  <!-- on right-hand side of event binding... -->
+  <!-- we can have arbitrary JavaScript statements -->
+  <!-- "template statement" -->
+  <button (click)="getRolls();">Rolls</button>
+</div>
+
+<div>
+  <!-- structural directives ngIf and ngFor -->
+  <!-- equivalent of @if, @foreach  from Razor -->
+  <!-- ngIf: if the condition is false, this element will not be in the DOM -->
+    <!-- ngFor will repeat the element according to how many things are in -->
+    <!-- what goes after "of" -->
+    <li *ngFor="let p of number">
+      {{ p }}
+      <!-- <span *ngIf="p.height && p.weight" class="smaller-text"> (regular HTML) -->
+      <!-- <span *ngIf="p.height && p.weight" [class]="heightWeightClass"> (property binding with regular attribute class) -->
+    </li>
+  <p *ngIf="showError" class="error-msg">{{ error }}</p>
+  <!-- "structural directives" like ngFor, ngIf, ngSwitch -->
+  <!-- are directives that can add new elements to the DOM. -->
+
+  <!-- we also have "attribute directives" which can modify the attributes -->
+  <!-- of existing elements -->
+  <!-- e.g.... ngStyle, ngClass -->
+
+  <!-- technically all components are also directives -->
+</div>
