@@ -1,32 +1,70 @@
-<p>
-  character works!
-</p>
+<!DOCTYPE html>
+<html class="no-js">
+<header>
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=IM+Fell+DW+Pica+SC" />
 
-<div>
-  <!-- on right-hand side of event binding... -->
-  <!-- we can have arbitrary JavaScript statements -->
-  <!-- "template statement" -->
-  <button (click)="getRolls();">Rolls</button>
-</div>
+</header>
+<body layout="column">
+  <h1>
+    A Nights Tale
+   </h1>
+   
+   <div>
+     <!-- on right-hand side of event binding... -->
+     <!-- we can have arbitrary JavaScript statements -->
+     <!-- "template statement" -->
+     <img (click)="getRolls();" src="https://pngimg.com/uploads/dice/dice_PNG125.png" class="dice">
+   </div>
+   
+   
+   <div>
+       <table class="table">
+         <tr>
+           <th class="tag-name">
+             Str
+           </th>
+           <th class="tag-name">
+             Dex
+           </th>
+           <th class="tag-name">
+             Con
+           </th>
+           <th class="tag-name">
+             Int
+           </th>
+           <th class="tag-name">
+             Wis
+           </th>
+           <th class="tag-name">
+             Cha
+           </th>
+         </tr>
+         <tr>
+           <td *ngFor="let p of number" class="tag-name">
+             {{p}}
+           </td>
+         </tr>
+       </table>
+   
+       <div>
+         <!-- on right-hand side of event binding... -->
+         <!-- we can have arbitrary JavaScript statements -->
+         <!-- "template statement" -->
+         <button (click)="putRolls();" class="set">Set</button>
+       </div>
+   
+     <p *ngIf="showError" class="error-msg">{{ error }}</p>
+     <!-- "structural directives" like ngFor, ngIf, ngSwitch -->
+     <!-- are directives that can add new elements to the DOM. -->
+   
+     <!-- we also have "attribute directives" which can modify the attributes -->
+     <!-- of existing elements -->
+     <!-- e.g.... ngStyle, ngClass -->
+   
+     <!-- technically all components are also directives -->
+   </div>
 
-<div>
-  <!-- structural directives ngIf and ngFor -->
-  <!-- equivalent of @if, @foreach  from Razor -->
-  <!-- ngIf: if the condition is false, this element will not be in the DOM -->
-    <!-- ngFor will repeat the element according to how many things are in -->
-    <!-- what goes after "of" -->
-    <li *ngFor="let p of number">
-      {{ p }}
-      <!-- <span *ngIf="p.height && p.weight" class="smaller-text"> (regular HTML) -->
-      <!-- <span *ngIf="p.height && p.weight" [class]="heightWeightClass"> (property binding with regular attribute class) -->
-    </li>
-  <p *ngIf="showError" class="error-msg">{{ error }}</p>
-  <!-- "structural directives" like ngFor, ngIf, ngSwitch -->
-  <!-- are directives that can add new elements to the DOM. -->
 
-  <!-- we also have "attribute directives" which can modify the attributes -->
-  <!-- of existing elements -->
-  <!-- e.g.... ngStyle, ngClass -->
+</body>
+</html>
 
-  <!-- technically all components are also directives -->
-</div>

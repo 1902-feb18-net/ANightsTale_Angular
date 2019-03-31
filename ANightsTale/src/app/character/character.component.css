@@ -1,0 +1,53 @@
+body
+{
+    background-image: url("http://i.imgur.com/NWIPbqS.jpg");
+    background-repeat: no-repeat;
+    width: auto;
+    height: 600px
+    
+}
+
+h1 {
+    font-family: "IM Fell DW Pica SC";
+    color: gold;
+}
+
+.tag-name {
+    font-family: "IM Fell DW Pica SC";
+    color: darkgoldenrod;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+.dice{
+    width: 70px;
+    height: 70px;    
+}
+.dice:hover{
+    width: 70px;
+    height: 70px;
+    background-color: rgb(153, 226, 43);
+    border-radius: 90px    
+}
+
+.table
+{
+    float: none;
+    margin: 0 auto;
+    background-color: lightgray;
+    border-style: double;
+    border-color: goldenrod;
+    width: 100px;
+    height: 100px;
+}
+
+.set {
+    background-color: forestgreen;
+    font-family: "IM Fell DW Pica SC";
+    font-weight: bold;
+    width: 70px;
+    height: 40px;
+    margin: 10px
+}
+

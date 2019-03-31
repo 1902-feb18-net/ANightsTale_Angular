@@ -1,18 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { ANightstaleApiService } from '../anightstale-api.service';
 import { RollsCollection } from 'src/models/characterRolls';
+import { Router } from '@angular/router';
+import { DOCUMENT } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-character',
   templateUrl: './character.component.html',
   styleUrls: ['./character.component.css']
 })
+
 export class CharacterComponent implements OnInit {
   number: number[];
   showError = false;
   error = '';
 
-  constructor(private charApi: ANightstaleApiService) { 
+
+  constructor(private charApi: ANightstaleApiService,
+    private router: Router,@Inject(DOCUMENT) private document: any) { 
     console.log(charApi)
   }
 
@@ -29,6 +34,20 @@ export class CharacterComponent implements OnInit {
       this.error = error;
     });
 
+  }
+
+  putRolls()
+  {
+    console.log(this.charApi)
+    console.log(this.number)
+    this.charApi.postAll(this.number).then(() => {
+      this.router.navigate(['/rolls']);
+    },
+    error => {
+      // should inspect error and put useful info on page
+      console.log(error);
+    });
+    this.document.location.href = 'https://localhost:44322/Campaign';
   }
   ngOnInit() {
   }
