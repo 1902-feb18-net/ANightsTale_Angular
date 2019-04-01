@@ -47,7 +47,7 @@ export class CharacterComponent implements OnInit {
       // should inspect error and put useful info on page
       console.log(error);
     });
-    this.document.location.href = 'https://localhost:44322/Campaign';
+    this.document.location.href = 'https://anightstaleui.azurewebsites.net/Campaign';
   }
   ngOnInit() {
   }

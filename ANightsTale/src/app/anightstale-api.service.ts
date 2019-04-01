@@ -11,8 +11,8 @@ import { HttpHeaders } from '@angular/common/http';
 
 
   export class ANightstaleApiService {
-    baseUrl = 'https://localhost:44369/api/Character/Rolls';
-    baseUrlPost = 'https://localhost:44369/api/Character/AngCharacter';
+    baseUrl = 'https://anightstale.azurewebsites.net/api/Character/Rolls';
+    baseUrlPost = 'https://anightstale.azurewebsites.net/api/Character/AngCharacter';
   
     constructor(private httpClient: HttpClient) { }
 
